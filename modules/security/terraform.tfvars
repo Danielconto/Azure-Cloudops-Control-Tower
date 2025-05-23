@@ -1,0 +1,9 @@
+environment          = "dev"
+location             = "eastus"
+resource_group_name  = "rg-dev"
+tenant_id            = "00000000-0000-0000-0000-000000000000"
+object_id            = "11111111-1111-1111-1111-111111111111"
+enable_purge_protection = false
+enable_defender         = true
+key_permissions         = ["get", "list"]
+secret_permissions      = ["get", "list"]

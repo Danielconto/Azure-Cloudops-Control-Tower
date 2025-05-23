@@ -1,0 +1,8 @@
+environment           = "dev"
+location              = "eastus"
+resource_group_name   = "rg-dev"
+storage_account_name  = "storacctdev001"
+replication_type      = "LRS"
+access_tier           = "Hot"
+container_name        = "mycontainer"
+container_access_type = "private"
