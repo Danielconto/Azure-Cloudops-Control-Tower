@@ -1,18 +1,18 @@
-resource "azurerm_virtual_network" "example" {
+resource "azurerm_virtual_network" "virt-net" {
   name                = "example-vnet-${var.environment}"
   address_space       = var.address_space
   location            = var.location
   resource_group_name = var.resource_group_name
 }
 
-resource "azurerm_subnet" "example" {
+resource "azurerm_subnet" "subnt" {
   name                 = "example-subnet-${var.environment}"
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.example.name
   address_prefix       = var.subnet_prefix
 }
 
-resource "azurerm_network_interface" "example" {
+resource "azurerm_network_interface" "nic" {
   name                = "example-nic-${var.environment}"
   location            = var.location
   resource_group_name = var.resource_group_name
@@ -24,7 +24,7 @@ resource "azurerm_network_interface" "example" {
   }
 }
 
-resource "azurerm_linux_virtual_machine" "example" {
+resource "azurerm_linux_virtual_machine" "vm" {
   name                = var.vm_name
   resource_group_name = var.resource_group_name
   location            = var.location
@@ -49,7 +49,7 @@ resource "azurerm_linux_virtual_machine" "example" {
   }
 }
 
-resource "azurerm_virtual_machine_scale_set" "example" {
+resource "azurerm_virtual_machine_scale_set "av-set" {
   name                = "example-vmss-${var.environment}"
   resource_group_name = var.resource_group_name
   location            = var.location
