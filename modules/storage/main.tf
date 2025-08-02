@@ -1,4 +1,4 @@
-resource "azurerm_storage_account" "example" {
+resource "azurerm_storage_account" "cloudops_storage" {
   name                      = var.storage_account_name
   resource_group_name       = var.resource_group_name
   location                  = var.location
@@ -27,8 +27,8 @@ resource "azurerm_storage_account" "example" {
   )
 }
 
-resource "azurerm_storage_container" "example" {
+resource "azurerm_storage_container" "cloudops_container" {
   name                  = var.container_name
-  storage_account_name  = azurerm_storage_account.example.name
+  storage_account_name  = azurerm_storage_account.cloudops_storage.name
   container_access_type = var.container_access_type
 }

@@ -35,12 +35,12 @@ output "nsg_name" {
 
 output "public_ip" {
   description = "The public IP address"
-  value       = azurerm_public_ip.example.ip_address
+  value       = azurerm_public_ip.cloudops_pip.ip_address
 }
 
 output "nic_id" {
   description = "The ID of the network interface"
-  value       = azurerm_network_interface.example.id
+  value       = azurerm_network_interface.cloudops_nic.id
 }
 
 output "networking" {
@@ -53,7 +53,7 @@ output "networking" {
     subnet_cidr = azurerm_subnet.subnet.address_prefixes[0]
     nsg_id      = azurerm_network_security_group.nsg.id
     nsg_name    = azurerm_network_security_group.nsg.name
-    public_ip   = azurerm_public_ip.example.ip_address
-    nic_id      = azurerm_network_interface.example.id
+    public_ip   = azurerm_public_ip.cloudops_pip.ip_address
+    nic_id      = azurerm_network_interface.cloudops_nic.id
   }
 }

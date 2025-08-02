@@ -59,8 +59,8 @@ resource "azurerm_subnet_network_security_group_association" "nsg_assoc" {
   network_security_group_id = azurerm_network_security_group.nsg.id
 }
 
-resource "azurerm_public_ip" "example" {
-  name                = "example-pip-${var.environment}"
+resource "azurerm_public_ip" "cloudops_pip" {
+  name                = "cloudops-pip-${var.environment}"
   location            = var.location
   resource_group_name = var.resource_group_name
   allocation_method   = "Dynamic"
@@ -72,8 +72,8 @@ resource "azurerm_public_ip" "example" {
   }
 }
 
-resource "azurerm_network_interface" "example" {
-  name                = "example-nic-${var.environment}"
+resource "azurerm_network_interface" "cloudops_nic" {
+  name                = "cloudops-nic-${var.environment}"
   location            = var.location
   resource_group_name = var.resource_group_name
 
@@ -81,7 +81,7 @@ resource "azurerm_network_interface" "example" {
     name                          = "primary"
     subnet_id                     = azurerm_subnet.subnet.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.example.id
+    public_ip_address_id          = azurerm_public_ip.cloudops_pip.id
   }
 
   tags = {
