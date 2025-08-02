@@ -1,14 +1,22 @@
 # Core settings
 environment           = "dev"
 location              = "East US"
+<<<<<<< HEAD
 resource_group_name   = "cloudops-rg"
+=======
+resource_group_name   = "rg-name"
+>>>>>>> 0d992328a0c9c70900c98c3d35b56e5afee59b45
 tenant_id             = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 object_id             = "yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy"
 
 # Networking variables
 vnet_name             = "vnet-dev"
 address_space         = ["10.0.0.0/16"]
+<<<<<<< HEAD
 subnet_name           = "cloudops-subnet"
+=======
+subnet_name           = "subnet-name"
+>>>>>>> 0d992328a0c9c70900c98c3d35b56e5afee59b45
 subnet_prefix         = "10.0.1.0/24"
 
 # Compute variables
