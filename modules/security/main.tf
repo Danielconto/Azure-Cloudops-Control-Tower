@@ -1,5 +1,5 @@
-resource "azurerm_key_vault" "example" {
-  name                        = "example-keyvault-${var.environment}"
+resource "azurerm_key_vault" "kv" {
+  name                        = "kv-keyvault-${var.environment}"
   location                    = var.location
   resource_group_name         = var.resource_group_name
   tenant_id                   = var.tenant_id
@@ -13,8 +13,8 @@ resource "azurerm_key_vault" "example" {
 })
 }
 
-resource "azurerm_key_vault_access_policy" "example" {
-  key_vault_id              = azurerm_key_vault.example.id
+resource "azurerm_key_vault_access_policy" "kv-poli" {
+  key_vault_id              = azurerm_key_vault.kv-poli.id
   tenant_id                 = var.tenant_id
   object_id                 = var.object_id
   key_permissions           = var.key_permissions
